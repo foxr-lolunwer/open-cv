@@ -16,6 +16,7 @@ def circle_detect(image):
     # print(image.shape)
     # 霍夫变换圆检测
     paraml2 = 120
+    # 参数说明可以见：http://www.juzicode.com/opencv-python-houghcircles/
     circles = cv.HoughCircles(gray, cv.HOUGH_GRADIENT, 1.5, 200, param1=300, param2=paraml2, minRadius=10,
                               maxRadius=250)
     # 如果检测到圆
