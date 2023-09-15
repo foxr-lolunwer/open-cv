@@ -1,7 +1,8 @@
 """
 Participating members: foxr lolunwer
 Time: 2023/9/14 - 2023/9/16
-Ver: 1.1
+Ver: -1.1 (2023/9/14)
+     -1.0 (2023/9/14)
 Test:
 - Use the mouse to select three points in sequence.
   These three points form a triangle.
