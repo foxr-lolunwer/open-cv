@@ -20,6 +20,7 @@ import time
 def mouse_record(event, x, y, flags, param):
     if event == cv.EVENT_LBUTTONDOWN:
         mouse_pos.append((x, y))
+    # 如果绘制超过10个三角形，强制重绘 
     if len(mouse_pos) > 30:
         mouse_pos.clear()
         mouse_pos.append((x, y))
@@ -52,7 +53,7 @@ while True:
     for i in mouse_pos:
         cv.circle(frame, i, 2, (0, 0, 255), -1)
     cv.imshow("image", frame)
-    # 按'q'键退出
+    # 按'q'键退出，'r'键重绘，'b'键撤销
     key = cv.waitKey(1)
     if key == ord('r'):
         mouse_pos.clear()
