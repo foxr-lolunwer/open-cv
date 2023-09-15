@@ -61,6 +61,7 @@ while True:
             del mouse_pos[-1]
     elif key == ord('q'):
         break
+         
 # 当所有事完成，释放 VideoCapture 对象
 cap.release()
 cv.destroyAllWindows()
