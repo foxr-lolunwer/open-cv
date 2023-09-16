@@ -43,14 +43,15 @@ while True:
     frame = cv.flip(frame, 1)
     # print(mouse_pos)
     len_pos = len(mouse_pos)
-    # 如果坐标列表长度大于三，绘制三角形
     if len_pos:
         k = len_pos % 3
         print(k)
+        # 如果坐标列表长度大于三，绘制三角形
         if len_pos >= 3:
             for i in range(1, len_pos // 3 + 1):
                 pos = np.array([mouse_pos[3 * i - 3], mouse_pos[3 * i - 2], mouse_pos[3 * i - 1]])
                 frame = cv.polylines(frame, np.int32([pos]), 1, (100, 100, 255), 5)
+        # 坐标列表除3余二时，绘制线
         if k == 2:
             frame = cv.line(frame, mouse_pos[-2], mouse_pos[-1], (255, 100, 100), 5)
     # 绘制所有点
@@ -62,6 +63,7 @@ while True:
     if key == ord('r'):
         mouse_pos.clear()
     elif key == ord('b'):
+        # 预防访问超限
         if len_pos > 0:
             del mouse_pos[-1]
     elif key == ord('q'):
